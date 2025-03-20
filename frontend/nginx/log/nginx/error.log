@@ -1,1 +1,0 @@
-2025/03/19 20:32:41 [error] 237#237: *14 access forbidden by rule, client: 172.19.0.1, server: _, request: "GET /.template.html HTTP/1.1", host: "localhost:8080"
