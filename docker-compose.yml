@@ -6,7 +6,7 @@ services:
       - PGID=1000
       - TZ=Canada/Mountain
     volumes:
-      - ./frontend/nginx.conf:/config/site-confs/default.conf
+      - ./frontend/nginx.conf:/config/nginx/site-confs/default.conf
       - ./frontend/site:/srv/www
     restart: unless-stopped
     networks:
