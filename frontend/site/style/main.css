@@ -1,0 +1,30 @@
+.title_margins {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.title_font {
+    font-size: large;
+}
+
+.me_img {
+    width: 600px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.light_link {
+    color:aquamarine;
+}
+
+a:hover {
+    color:aqua;
+}
+
+@media (max-width: 700px) {
+    .me_img {
+        width: 80%;
+    }
+}

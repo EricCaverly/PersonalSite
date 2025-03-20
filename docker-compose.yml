@@ -1,0 +1,29 @@
+services:
+  frontend:
+    image: lscr.io/linuxserver/nginx:latest
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Canada/Mountain
+    volumes:
+      - ./frontend/nginx:/config
+      - ./frontend/site:/srv/www
+    restart: unless-stopped
+    networks:
+      - external_services
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.website.rule=Host(`ericc.ninja`)"
+        - "traefik.http.routers.website.entrypoints=websecuredmz"
+        - "traefik.http.services.website.loadbalancer.server.port=443"
+        - "traefik.http.services.website.loadbalancer.server.scheme=https"
+        - "traefik.http.routers.website.service=website"
+        - "traefik.http.routers.website.tls=true"
+        - "traefik.http.routers.website.tls.certresolver=production"
+        - "traefik.http.routers.website.tls.domains[0].main=ericc.ninja"
+        - "traefik.http.routers.website.tls.domains[0].sans=*.ericc.ninja"
+
+networks:
+  external_services:
+    external: true
