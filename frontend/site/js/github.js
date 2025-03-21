@@ -32,14 +32,16 @@ $(() => {
 
         anch.addEventListener("click", () => {
             fetch_readme(projects[i].readme, (html) => {
+
                 $("#proj_title").html(projects[i].name);
                 $("#proj_readme").html(html);
                 $("#proj_link").attr("href", projects[i].link);
-                $("#proj_status").html("Dynamically loaded the readme!");
+                $("#proj_status").html("Dynamically loaded the README! Please also check out the project on ");
             });
         })
 
         li.appendChild(anch);
+        li.setAttribute("class", "increased_indentation");
         hamburg.append(li);
     }
 })

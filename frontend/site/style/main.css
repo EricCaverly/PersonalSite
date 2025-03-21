@@ -3,6 +3,10 @@
     margin-right: 20px;
 }
 
+.increased_indentation {
+    padding-left: 30px;
+}
+
 .title_font {
     font-size: large;
 }
